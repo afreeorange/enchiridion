@@ -1,4 +1,6 @@
-An attempt to teach myself LaTeX by typesetting [this text](http://classics.mit.edu/Epictetus/epicench.html).
+An attempt to teach myself LaTeX by typesetting [this text](http://classics.mit.edu/Epictetus/epicench.html). 
+
+[Here's what it looks like](https://www.dropbox.com/s/pm9u7dme9rpdv4f/enchiridion.pdf?dl=0) so far.
 
 Doing Things
 =============
