@@ -1,25 +1,20 @@
 % To do
 % - Title page (headings in center) http://ctan.math.washington.edu/tex-archive/info/latex-samples/TitlePages/titlepages.pdf
-% - headers on alternate pages
 % - Image
 %     https://en.wikipedia.org/wiki/Enchiridion_of_Epictetus#/media/File:Epictetus_Enchiridion_1683_page1.jpg
-% - Margin for section numbers
 % - The End
-% - Different font for section numbers
 % - Different paper size?
+% Different size
+% Page numbering from first page of text
 
-% \usepackage{fancyhdr}
-% \pagestyle{fancy}
-% \fancyhf{}
-% \rhead{Share\LaTeX}
-% \lhead{Guides and tutorials}
-% \rfoot{Page \thepage}
-
-\documentclass[a4paper,12pt]{book}
+% \documentclass{book}
+\documentclass[imperial,twoside,12pt]{octavo}
 
 \usepackage{marginnote}
 \usepackage{color}
 \usepackage{fontspec}
+\usepackage{fancyhdr}
+\usepackage[usenames,dvipsnames]{xcolor}
 
 % Set up the title page
 \title{\uppercase{The Enchiridion}}
@@ -32,26 +27,38 @@
 
 % Set the document font
 \defaultfontfeatures{Ligatures=TeX,Numbers=OldStyle}
-\setmainfont{Adobe Caslon Pro}
+% \setmainfont{Adobe Caslon Pro}
+\setmainfont{Hoefler Text}
 
 % Create a 'ticker' for the original pages to be displayed in the margin
 \newcounter{original_page_count}
 \setcounter{original_page_count}{0}
-\newcommand{\margincounter}{
+\newcommand{\marginticker}{
     \stepcounter{original_page_count}
     \marginnote{
         \color{red}
         \small{
             \roman{original_page_count}
         }
-    }[4mm]
+    }[3mm]
 }
 
+% Set page headers
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[RE]{\color{Gray}\small{\uppercase{Enchiridion}}}
+\fancyhead[LO]{\color{Gray}\small{\uppercase{Epictetus}}}
+\fancyfoot[CE]{\color{Gray}\thepage}
+\fancyfoot[CO]{\color{Gray}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ----------------------------------------------------------------------------
 
 \begin{document}
-\maketitle
 
-\margincounter{}
+\marginticker{}
 
 Some things are in our control and others not. Things in our control
 are opinion, pursuit, desire, aversion, and, in a word, whatever are
@@ -86,7 +93,7 @@ and chiefly, by this: whether it concerns the things which are in
 our own control, or those which are not; and, if it concerns anything
 not in our control, be prepared to say that it is nothing to you.
 
-\margincounter{}
+\marginticker{}
 
 Remember that following desire promises the attainment of that
 of which you are desirous; and aversion promises the avoiding that
@@ -105,7 +112,7 @@ are, and which it would be laudable to desire, nothing is yet in your
 possession. Use only the appropriate actions of pursuit and avoidance;
 and even these lightly, and with gentleness and reservation.
 
-\margincounter{}
+\marginticker{}
 
 With regard to whatever objects give you delight, are useful, or
 are deeply loved, remember to tell yourself of what general nature
@@ -116,7 +123,7 @@ you will not be disturbed. If you kiss your child, or your wife, say
 that you only kiss things which are human, and thus you will not be
 disturbed if either of them dies. 
 
-\margincounter{}
+\marginticker{}
 
 When you are going about any action, remind yourself what nature
 the action is. If you are going to bathe, picture to yourself the
@@ -130,7 +137,7 @@ if any hindrance arises in bathing, you will have it ready to say,
 state conformable to nature; and I will not keep it if I am bothered
 at things that happen."
 
-\margincounter{}
+\marginticker{}
 
 Men are disturbed, not by things, but by the principles and notions
 which they form concerning things. Death, for instance, is not terrible,
@@ -143,18 +150,18 @@ just starting instruction will lay the fault on himself. Some who
 is perfectly instructed will place blame neither on others nor on
 himself. 
 
-\margincounter{}
+\marginticker{}
 
 Don't be prideful with any excellence that is not your own. If
 a horse should be prideful and say, ``I am handsome," it would be
-supportable. But when you are prideful, and say, " I have a handsome
+supportable. But when you are prideful, and say, ``I have a handsome
 horse," know that you are proud of what is, in fact, only the good
 of the horse. What, then, is your own? Only your reaction to the appearances
 of things. Thus, when you behave conformably to nature in reaction
 to how things appear, you will be proud with reason; for you will
 take pride in some good of your own. 
 
-\margincounter{}
+\marginticker{}
 
 Consider when, on a voyage, your ship is anchored; if you go on
 shore to get water you may along the way amuse yourself with picking
@@ -168,12 +175,12 @@ must run to the ship, leaving them, and regarding none of them. But
 if you are old, never go far from the ship: lest, when you are called,
 you should be unable to come in time. 
 
-\margincounter{}
+\marginticker{}
 
 Don't demand that things happen as you wish, but wish that they
 happen as they do happen, and you will go on well. 
 
-\margincounter{}
+\marginticker{}
 
 Sickness is a hindrance to the body, but not to your ability to
 choose, unless that is your choice. Lameness is a hindrance to the
@@ -181,7 +188,7 @@ leg, but not to your ability to choose. Say this to yourself with
 regard to everything that happens, then you will see such obstacles
 as hindrances to something else, but not to yourself. 
 
-\margincounter{}
+\marginticker{}
 
 With every accident, ask yourself what abilities you have for
 making a proper use of it. If you see an attractive person, you will
@@ -190,7 +197,7 @@ If you are in pain, you will find fortitude. If you hear unpleasant
 language, you will find patience. And thus habituated, the appearances
 of things will not hurry you away along with them. 
 
-\margincounter{}
+\marginticker{}
 
 Never say of anything, ``I have lost it"; but, ``I have returned
 it." Is your child dead? It is returned. Is your wife dead? She is
@@ -200,7 +207,7 @@ is it to you who the giver assigns to take it back? While he gives
 it to you to possess, take care of it; but don't view it as your own,
 just as travelers view a hotel. 
 
-\margincounter{}
+\marginticker{}
 
 If you want to improve, reject such reasonings as these: ``If I
 neglect my affairs, I'll have no income; if I don't correct my servant,
@@ -215,7 +222,7 @@ call your servant, it is possible that he may not come; or, if he
 does, he may not do what you want. But he is by no means of such importance
 that it should be in his power to give you any disturbance.
 
-\margincounter{}
+\marginticker{}
 
 If you want to improve, be content to be thought foolish and stupid
 with regard to external things. Don't wish to be thought to know anything;
@@ -225,7 +232,7 @@ in a state conformable to nature, and at the same time acquire external
 things. But while you are careful about the one, you must of necessity
 neglect the other. 
 
-\margincounter{}
+\marginticker{}
 
 If you wish your children, and your wife, and your friends to
 live for ever, you are stupid; for you wish to be in control of things
@@ -239,7 +246,7 @@ that person wishes either to have or to avoid. Whoever, then, would
 be free, let him wish nothing, let him decline nothing, which depends
 on others else he must necessarily be a slave. 
 
-\margincounter{}
+\marginticker{}
 
 Remember that you must behave in life as at a dinner party. Is
 anything brought around to you? Put out your hand and take your share
@@ -253,7 +260,9 @@ partner at the feasts of the gods, but also of their empire. For,
 by doing this, Diogenes, Heraclitus and others like them, deservedly
 became, and were called, divine. 
 
-\margincounter{}
+\break
+
+\marginticker{}
 
 When you see anyone weeping in grief because his son has gone
 abroad, or is dead, or because he has suffered in his affairs, be
@@ -264,7 +273,7 @@ person; it is the judgment which he makes about it." As far as words
 go, however, don't reduce yourself to his level, and certainly do
 not moan with him. Do not moan inwardly either. 
 
-\margincounter{}
+\marginticker{}
 
 Remember that you are an actor in a drama, of such a kind as the
 author pleases to make it. If short, of a short one; if long, of a
@@ -273,7 +282,7 @@ a governor, or a private person, see that you act it naturally. For
 this is your business, to act well the character assigned you; to
 choose it is another's. 
 
-\margincounter{}
+\marginticker{}
 
 When a raven happens to croak unluckily, don't allow the appearance
 hurry you away with it, but immediately make the distinction to yourself,
@@ -282,7 +291,7 @@ paltry body, or property, or reputation, or children, or wife. But
 to me all omens are lucky, if I will. For whichever of these things
 happens, it is in my control to derive advantage from it."
 
-\margincounter{}
+\marginticker{}
 
 You may be unconquerable, if you enter into no combat in which
 it is not in your own control to conquer. When, therefore, you see
@@ -294,7 +303,7 @@ for your part, don't wish to be a general, or a senator, or a consul,
 but to be free; and the only way to this is a contempt of things not
 in our own control. 
 
-\margincounter{}
+\marginticker{}
 
 Remember, that not he who gives ill language or a blow insults,
 but the principle which represents these things as insulting. When,
@@ -303,13 +312,13 @@ which provokes you. Try, therefore, in the first place, not to be
 hurried away with the appearance. For if you once gain time and respite,
 you will more easily command yourself. 
 
-\margincounter{}
+\marginticker{}
 
 Let death and exile, and all other things which appear terrible
 be daily before your eyes, but chiefly death, and you win never entertain
 any abject thought, nor too eagerly covet anything. 
 
-\margincounter{}
+\marginticker{}
 
 If you have an earnest desire of attaining to philosophy, prepare
 yourself from the very first to be laughed at, to be sneered by the
@@ -321,7 +330,7 @@ station. For remember that, if you adhere to the same point, those
 very persons who at first ridiculed will afterwards admire you. But
 if you are conquered by them, you will incur a double ridicule.
 
-\margincounter{}
+\marginticker{}
 
 If you ever happen to turn your attention to externals, so as
 to wish to please anyone, be assured that you have ruined your scheme
@@ -329,7 +338,7 @@ of life. Be contented, then, in everything with being a philosopher;
 and, if you wish to be thought so likewise by anyone, appear so to
 yourself, and it will suffice you. 
 
-\margincounter{}
+\marginticker{}
 
 Don't allow such considerations as these distress you. ``I will
 live in dishonor, and be nobody anywhere." For, if dishonor is an
@@ -364,7 +373,7 @@ of your fidelity and honor. But if, by desiring to be useful to that,
 you lose these, of what use can you be to your country when you are
 become faithless and void of shame. 
 
-\margincounter{}
+\marginticker{}
 
 Is anyone preferred before you at an entertainment, or in a compliment,
 or in being admitted to a consultation? If these things are good,
@@ -390,7 +399,7 @@ and a blockhead. Have you nothing, then, instead of the supper? Yes,
 indeed, you have: the not praising him, whom you don't like to praise;
 the not bearing with his behavior at coming in. 
 
-\margincounter{}
+\marginticker{}
 
 The will of nature may be learned from those things in which we
 don't distinguish from each other. For example, when our neighbor's
@@ -403,19 +412,19 @@ is a human accident." but if anyone's own child happens to die, it
 is presently, ``Alas I how wretched am I!" But it should be remembered
 how we are affected in hearing the same thing concerning others.
 
-\margincounter{}
+\marginticker{}
 
 As a mark is not set up for the sake of missing the aim, so neither
 does the nature of evil exist in the world. 
 
-\margincounter{}
+\marginticker{}
 
 If a person gave your body to any stranger he met on his way,
 you would certainly be angry. And do you feel no shame in handing
 over your own mind to be confused and mystified by anyone who happens
 to verbally attack you? 
 
-\margincounter{}
+\marginticker{}
 
 In every affair consider what precedes and follows, and then undertake
 it. Otherwise you will begin with spirit; but not having thought of
@@ -460,7 +469,7 @@ one man, either good or bad. You must cultivate either your own ruling
 faculty or externals, and apply yourself either to things within or
 without you; that is, be either a philosopher, or one of the vulgar.
 
-\margincounter{}
+\marginticker{}
 
 Duties are universally measured by relations. Is anyone a father?
 If so, it is implied that the children should take care of him, submit
@@ -475,7 +484,7 @@ you will find, from the idea of a neighbor, a citizen, a general,
 the corresponding duties if you accustom yourself to contemplate the
 several relations. 
 
-\margincounter{}
+\marginticker{}
 
 Be assured that the essential property of piety towards the gods
 is to form right opinions concerning them, as existing ``I and as governing
@@ -507,7 +516,7 @@ fruits, conformably to the customs of his country, with purity, and
 not in a slovenly manner, nor negligently, nor sparingly, nor beyond
 his ability. 
 
-\margincounter{}
+\marginticker{}
 
 When you have recourse to divination, remember that you know not
 what the event will be, and you come to learn it of the diviner; but
@@ -534,7 +543,7 @@ these hazards, to the greater diviner, the Pythian god, who cast out
 of the temple the person who gave no assistance to his friend while
 another was murdering him.
 
-\margincounter{}
+\marginticker{}
 
 Immediately prescribe some character and form of conduce to yourself,
 which you may keep both alone and in company. 
@@ -611,7 +620,7 @@ if there be a proper opportunity, rebuke him who makes advances that
 way; or, at least, by silence and blushing and a forbidding look,
 show yourself to be displeased by such talk. 
 
-\margincounter{}
+\marginticker{}
 
 If you are struck by the appearance of any promised pleasure,
 guard yourself against being hurried away by it; but let the affair
@@ -625,7 +634,7 @@ its enticing, and agreeable and attractive force may not subdue you;
 but set in opposition to this how much better it is to be conscious
 of having gained so great a victory. 
 
-\margincounter{}
+\marginticker{}
 
 When you do anything from a clear judgment that it ought to be
 done, never shun the being seen to do it, even though the world should
@@ -633,7 +642,7 @@ make a wrong supposition about it; for, if you don't act right, shun
 the action itself; but, if you do, why are you afraid of those who
 censure you wrongly? 
 
-\margincounter{}
+\marginticker{}
 
 As the proposition, ``Either it is day or it is night," is extremely
 proper for a disjunctive argument, but quite improper in a conjunctive
@@ -644,20 +653,20 @@ only the value of those things which are set before you to the body,
 but the value of that behavior which ought to be observed towards
 the person who gives the entertainment. 
 
-\margincounter{}
+\marginticker{}
 
 If you have assumed any character above your strength, you have
 both made an ill figure in that and quitted one which you might have
 supported. 
 
-\margincounter{}
+\marginticker{}
 
 When walking, you are careful not to step on a nail or turn your
 foot; so likewise be careful not to hurt the ruling faculty of your
 mind. And, if we were to guard against this in every action, we should
 undertake the action with the greater safety. 
 
-\margincounter{}
+\marginticker{}
 
 The body is to everyone the measure of the possessions proper
 for it, just as the foot is of the shoe. If, therefore, you stop at
@@ -667,7 +676,7 @@ a shoe, if you go beyond its fitness to the foot, it comes first to
 be gilded, then purple, and then studded with jewels. For to that
 which once exceeds a due measure, there is no bound. 
 
-\margincounter{}
+\marginticker{}
 
 Women from fourteen years old are flattered with the title of
 ``mistresses" by the men. Therefore, perceiving that they are regarded
@@ -676,7 +685,7 @@ and in that to place ill their hopes. We should, therefore, fix our
 attention on making them sensible that they are valued for the appearance
 of decent, modest and discreet behavior. 
 
-\margincounter{}
+\marginticker{}
 
 It is a mark of want of genius to spend much time in things relating
 to the body, as to be long in our exercises, in eating and drinking,
@@ -684,7 +693,7 @@ and in the discharge of other animal functions. These should be done
 incidentally and slightly, and our whole attention be engaged in the
 care of the understanding. 
 
-\margincounter{}
+\marginticker{}
 
 When any person harms you, or speaks badly of you, remember that
 he acts or speaks from a supposition of its being his duty. Now, it
@@ -696,7 +705,7 @@ is not hurt, but he who is deceived about it. Setting out, then, from
 these principles, you will meekly bear a person who reviles you, for
 you will say upon every occasion, ``It seemed so to him."
 
-\margincounter{}
+\marginticker{}
 
 Everything has two handles, the one by which it may be carried,
 the other by which it cannot. If your brother acts unjustly, don't
@@ -705,7 +714,7 @@ it cannot be carried; but by the opposite, that he is your brother,
 that he was brought up with you; and thus you will lay hold on it,
 as it is to be carried. 
 
-\margincounter{}
+\marginticker{}
 
 These reasonings are unconnected: ``I am richer than you, therefore
 I am better"; ``I am more eloquent than you, therefore I am better."
@@ -714,7 +723,7 @@ property is greater than yours;" ``I am more eloquent than you, therefore
 my style is better than yours." But you, after all, are neither property
 nor style. 
 
-\margincounter{}
+\marginticker{}
 
 Does anyone bathe in a mighty little time? Don't say that he does
 it ill, but in a mighty little time. Does anyone drink a great quantity
@@ -723,7 +732,7 @@ For, unless you perfectly understand the principle from which anyone
 acts, how should you know if he acts ill? Thus you will not run the
 hazard of assenting to any appearances but such as you fully comprehend.
 
-\margincounter{}
+\marginticker{}
 
 Never call yourself a philosopher, nor talk a great deal among
 the unlearned about theorems, but act conformably to them. Thus, at
@@ -742,7 +751,9 @@ digesting their food, they outwardly produce wool and milk. Thus,
 therefore, do you likewise not show theorems to the unlearned, but
 the actions produced by them after they have been digested.
 
-\margincounter{}
+\break
+
+\marginticker{}
 
 When you have brought yourself to supply the necessities of your
 body at a small price, don't pique yourself upon it; nor, if you drink
@@ -753,7 +764,7 @@ and bearing hard trials, do it for your own sake, and not for the
 world; don't grasp statues, but, when you are violently thirsty, take
 a little cold water in your mouth, and spurt it out and tell nobody.
 
-\margincounter{}
+\marginticker{}
 
 The condition and characteristic of a vulgar person, is, that
 he never expects either benefit or hurt from himself, but from externals.
@@ -772,10 +783,10 @@ choice; the exertion of his active powers towards anything is very
 gentle; if he appears stupid or ignorant, he does not care, and, in
 a word, he watches himself as an enemy, and one in ambush.
 
-\margincounter{}
+\marginticker{}
 
 When anyone shows himself overly confident in ability to understand
-and interpret the works of Chrysippus, say to yourself, " Unless Chrysippus
+and interpret the works of Chrysippus, say to yourself, ``Unless Chrysippus
 had written obscurely, this person would have had no subject for his
 vanity. But what do I desire? To understand nature and follow her.
 I ask, then, who interprets her, and, finding Chrysippus does, I have
@@ -789,7 +800,7 @@ interpret Chrysippus. When anyone, therefore, desires me to read Chrysippus
 to him, I rather blush when I cannot show my actions agreeable and
 consonant to his discourse. 
 
-\margincounter{}
+\marginticker{}
 
 Whatever moral rules you have deliberately proposed to yourself.
 abide by them as they were laws, and as if you would be guilty of
@@ -815,7 +826,7 @@ himself by everything. attending to nothing but reason. And though
 you are not yet a Socrates, you ought, however, to live as one desirous
 of becoming a Socrates. 
 
-\margincounter{}
+\marginticker{}
 
 The first and most necessary topic in philosophy is that of the
 use of moral theorems, such as, ``We ought not to lie;" the second
@@ -832,7 +843,10 @@ neglect the first. Therefore, at the same time that we lie, we are
 immediately prepared to show how it is demonstrated that lying is
 not right. 
 
-\margincounter{}
+\pagebreak
+
+\marginticker{}
+
 
 Upon all occasions we ought to have these maxims ready at hand: 
 
