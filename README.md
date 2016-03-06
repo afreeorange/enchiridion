@@ -1,15 +1,15 @@
-An attempt to teach myself LaTeX by typesetting [this text](http://classics.mit.edu/Epictetus/epicench.html). 
+An attempt to teach myself LaTeX by typesetting [this text](http://classics.mit.edu/Epictetus/epicench.html).
 
 [Here's what it looks like](https://www.dropbox.com/s/pm9u7dme9rpdv4f/enchiridion.pdf?dl=0) so far.
 
 Doing Things
 =============
 
-Installing Packages
--------------------
+Installing Dependencies
+-----------------------
 
     tlmgr update --self
-    tlmgr install marginnote
+    tlmgr install marginnote octavo
 
 References
 ==========
@@ -25,8 +25,8 @@ Headers & Footers
 * http://texblog.org/2007/11/07/headerfooter-in-latex-with-fancyhdr/
 * https://www.sharelatex.com/learn/Headers_and_footers
 
-Book Sizes
-----------
+Book and Document Sizes
+-----------------------
 
 * https://en.wikipedia.org/wiki/Book_size
 * https://en.wikibooks.org/wiki/LaTeX/Page_Layout
